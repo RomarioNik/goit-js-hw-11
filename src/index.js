@@ -72,7 +72,7 @@ const optionsLightbox = {
   captionDelay: 250,
 };
 
-const lightbox = new SimpleLightbox('.pictures a', optionsLightbox);
+const lightbox = new SimpleLightbox('.gallery__item a', optionsLightbox);
 
 Notify.init({
   width: '300px',
@@ -119,8 +119,10 @@ function fatchImages() {
 
       if (images.getPageNumber() === 1) {
         Notify.success(`Hooray! We found ${data.totalHits} images.`);
+        uhu(2, 1);
+        // 0, 1
       }
-      uhu(2, 1);
+
       lightbox.refresh();
       images.incrementPage();
     })
@@ -135,57 +137,16 @@ function renderHTML(data) {
 
 function checkPosition() {
   const height = document.body.offsetHeight;
-  console.log('checkPosition ~ height:', height);
   const screenHeight = window.innerHeight;
-
   const scrolled = window.scrollY;
-  console.log('checkPosition ~ scrolled:', scrolled);
 
   const threshold = height - screenHeight / 2;
-
   const position = scrolled + screenHeight;
 
   if (position >= threshold) {
     fatchImages();
   }
 }
-
-// function checkPosition() {
-// const height = document.body.offsetHeight;
-// // console.log('checkPosition ~ height:', height);
-// const fetchPoint = window.innerHeight / 4;
-// // console.log('checkPosition1 ~ fetchPoint:', fetchPoint);
-// const scrolled = window.scrollY;
-// // console.log('checkPosition ~ scrolled:', scrolled);
-// const start = height - fetchPoint;
-// // console.log('checkPosition1 ~ start:', start);
-// if (scrolled >= start) {
-// fatchImages();
-// }
-// const page = window.scrollY;
-// console.log('checkPosition ~ page:', page);
-// const client = document.documentElement.clientHeight;
-// // console.log('checkPosition ~ client:', client);
-// const scroll = document.documentElement.scrollHeight;
-// console.log('checkPosition ~ scroll:', scroll);
-// const point = scroll - client - client / 4;
-// console.log('checkPosition ~ point:', point);
-// const end = page - client / 4;
-// console.log('checkPosition ~ end:', end);
-// if (point === end) {
-//   // fatchImages();
-// }
-// const onPageDown = () => {
-//   const page = window.scrollY;
-//   const client = document.documentElement.clientHeight;
-//   const scroll = document.documentElement.scrollHeight;
-// };
-// const threshold = height - screenHeight / 2;
-// const position = scrolled + screenHeight;
-// if (position >= threshold) {
-//   fatchImages();
-// }
-// }
 
 function clearHTML() {
   refs.imgList.innerHTML = '';
