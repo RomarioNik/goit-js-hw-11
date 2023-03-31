@@ -1,2 +1,11 @@
 @import './common';
-@import './example';
+
+@import './base/variables';
+@import './base/reset';
+@import './base/base';
+
+@import './layout/header';
+
+@import './components/gallery';
+
+@import './layout/footer';
