@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export class Images {
-  #BASE_URL = 'http://pixabay.com/api/';
+  #BASE_URL = 'https://pixabay.com/api/';
   #options = {
     params: {
       key: '33934999-d2cb520cb2e3ec608d0042eac',
