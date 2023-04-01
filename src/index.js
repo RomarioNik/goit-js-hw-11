@@ -58,13 +58,11 @@ function fatchImages() {
         );
         return;
       }
-      console.log(data);
       renderHTML(data.hits);
 
       if (images.getPageNumber() === 1) {
         Notify.success(`Hooray! We found ${data.totalHits} images.`);
         uhu(2, 2);
-        // 0, 1
       }
 
       lightbox.refresh();
