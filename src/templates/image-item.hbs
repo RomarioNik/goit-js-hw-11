@@ -50,37 +50,26 @@
         <div class='pictures__info info'>
           <ul class='info__list'>
             <li class='info__item'>
-              <svg
-                class='search-form__button-icon'
-                xmlns='http://www.w3.org/2000/svg'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  fill-rule='evenodd'
-                  d='M10 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-7 5a7 7 0 1 1 12.606 4.192l5.101 5.1a1 1 0 0 1-1.414 1.415l-5.1-5.1A7 7 0 0 1 3 10Z'
-                  clip-rule='evenodd'
-                ></path>
+              <svg class='info__icon info-icon-like' width='15' height='15'>
+                <use href='/svg-sprite.svg#icon-like'></use>
               </svg>
-              {{! <svg class='info__icon info-icon-like' width='15' height='15'>
-                <use href='./images/svg-sprite.svg#icon-like'></use>
-              </svg> }}
               <span class='info__quantity'>{{likes}}</span>
             </li>
             <li class='info__item'>
               <svg class='info__icon info-icon-view' width='15' height='15'>
-                <use href='./images/svg-sprite.svg#icon-view'></use>
+                <use href='/svg-sprite.svg#icon-view'></use>
               </svg>
               <span class='info__quantity'>{{views}}</span>
             </li>
             <li class='info__item'>
               <svg class='info__icon info-icon-comment' width='15' height='15'>
-                <use href='./images/svg-sprite.svg#icon-comment'></use>
+                <use href='/svg-sprite.svg#icon-comment'></use>
               </svg>
               <span class='info__quantity'>{{comments}}</span>
             </li>
             <li class='info__item'>
               <svg class='info__icon info-icon-download' width='15' height='15'>
-                <use href='./images/svg-sprite.svg#icon-download'></use>
+                <use href='/svg-sprite.svg#icon-download'></use>
               </svg>
               <span class='info__quantity'>{{downloads}}</span>
             </li>
