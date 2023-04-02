@@ -11,6 +11,8 @@ const refs = refsEl();
 
 refs.form.addEventListener('submit', handleSubmitForm);
 refs.imgList.addEventListener('click', handleClickImage);
+refs.sizeRange.addEventListener('input', throttle(handleChangeRange, 300));
+refs.heightRange.addEventListener('input', throttle(handleChangeRange, 300));
 window.addEventListener('scroll', throttle(checkPosition, 300));
 
 const images = new Images();
@@ -26,6 +28,16 @@ Notify.init({
   cssAnimationDuration: 400,
   cssAnimationStyle: 'fade',
 });
+
+function handleChangeRange(e) {
+  updateGallery();
+}
+
+function updateGallery() {
+  const size = refs.sizeRange.value;
+  const height = refs.heightRange.value;
+  uhu(size, height);
+}
 
 function handleClickImage(e) {
   if (e.target.nodeName === 'IMG') {
@@ -62,7 +74,7 @@ function fatchImages() {
 
       if (images.getPageNumber() === 1) {
         Notify.success(`Hooray! We found ${data.totalHits} images.`);
-        uhu(2, 2);
+        updateGallery();
       }
 
       lightbox.refresh();
@@ -82,7 +94,7 @@ function checkPosition() {
   const screenHeight = window.innerHeight;
   const scrolled = window.scrollY;
 
-  const threshold = height - screenHeight / 2;
+  const threshold = height - screenHeight / 4;
   const position = scrolled + screenHeight;
 
   if (position >= threshold) {

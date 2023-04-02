@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>goit-js-hw-11</title>
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
@@ -12,19 +12,45 @@
     <header class="header">
       <div class="container header__container">
         <form class="header__search search-form" id="search-form">
-          <input
-            class="search-form__input"
-            type="text"
-            name="query"
-            autocomplete="off"
-            placeholder="Search images..."
-            required
-          />
-          <button class="search-form__button" type="submit">
-            <svg class="search-form__button-icon" width="15" height="15">
-              <use href="./images/svg-sprite.svg#icon-search"></use>
-            </svg>
-          </button>
+          <div class="search-form__query-wrap">
+            <input
+              class="search-form__input"
+              type="text"
+              name="query"
+              autocomplete="off"
+              placeholder="Search images..."
+              required
+            />
+            <button class="search-form__button" type="submit">
+              <svg class="search-form__button-icon" width="15" height="15">
+                <use href="./images/svg-sprite.svg#icon-search"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="search-form__range-wrap">
+            <label class="search-form__label-range"
+              >Size
+              <input
+                class="search-form__range"
+                type="range"
+                name="size"
+                min="0"
+                max="3"
+                data-volume="size"
+              />
+            </label>
+            <label class="search-form__label-range"
+              >Height
+              <input
+                class="search-form__range"
+                type="range"
+                name="heigh"
+                min="0"
+                max="3"
+                data-volume="height"
+              />
+            </label>
+          </div>
         </form>
       </div>
     </header>
